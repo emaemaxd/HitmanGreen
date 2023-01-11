@@ -1,4 +1,4 @@
-# Exercise MongoDB.09 – Microproject :joy:
+# Exercise MongoDB.09 – Microproject :smile:
 
 ## Introduction
 
@@ -9,8 +9,8 @@ In the past assignments we have trained how to:
 • Provide a REST webservice with dependency injection
 • Create a simple client with which to consume the services and provide (basic) functionality
 for the user
-You will work in four groups. Each group will get assigned a topic. In this context you’ll create a small application which uses a MongoDB instance as data storage backend.
-You are allowed to use any platform/driver you like. 
+You will work in four groups. Each group will get *assigned a topic*. In this context you’ll create a small application which uses a MongoDB instance as data storage backend.
+You are allowed to use any platform/driver you like.
 
 ## Project Size
 
@@ -18,41 +18,44 @@ While you are of course free to create a bigger project with more functionality 
 
 ### User Stories
 
-Implement at least three user stories
-- For example such user stories could be: browse products, shopping cart, order list, multiple users, live ticker, comments, picture upload,. . .
+Implement at least *three* user stories
+
+- For example such user stories could be: browse products, shopping cart, order list, multiple users, live ticker, comments, picture upload, ...
 - This depends highly on your topic, but think of it as ’one feature implemented from client through service till database’.
 
 ### Endpoints
 
 The endpoints (controllers) support the user stories
+
 - You’ll usually need at least one per distinct (collection) entity
 - Add methods as required
-- Do not use the repositories directly but utilize services!
-
-    – At least one service method has to be non trivial (not just relaying to the repository)
+- Do *not* use the repositories directly but utilize *services*!
+  - At least *one* service method has to be *non trivial* (not just relaying to the repository)
 
 ### Entities
 
 Use at least five different entities
+
 - You have to use at least once embedded documents, but at the same time have at least two distinct collections
 - You will need at least one ’pseudo foreign key’ relation
-- You have to create at least one index – this can be a unique index if used meaningful
+- You have to create at least *one* index – this can be a unique index if used meaningful
 
 ### Repositories
 
 All distinct collections have to have their own repository
-- Create at least one each of the following queries/operations in the project – those do not need to be all in one repository:
 
-    – Insert
-    – Update
-    – Delete
-    – Filtered Query
-    – Aggregation Query
-    – Join (lookup) Query
+- Create at least one each of the following queries/operations in the project, those do *not* need to be all in one repository:
+  - Inser
+  - Update
+  - Delete
+  - Filtered Query
+  - Aggregation Query
+  - Join (lookup) Query
 
 ### Client
 
 The client should be basic but functional
+
 - You may choose any frontend platform you like (even server generated)
 - You do not have to invest highly into design!
 - The client is to be technically sound enough that it can be treated as prototype for a ’proper’ client that would be created later on
@@ -68,7 +71,10 @@ The application has to be functional of course.
 ## Presentation
 
 After completing the microproject you will present (about 10 minutes) your solution in class. Focus on the following aspects:
+
 - General topic
 - User stories
-- Tricky implementation aspects (+ your solution) • Showcase of the functionality
+- Tricky implementation aspects (+ your solution)
+- Showcase of the functionality
+
 Prepare your application in such a way (e.g. server available in the network) that your class- mates are able to try out the application themselves after your presentation!
