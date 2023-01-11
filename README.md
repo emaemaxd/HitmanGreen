@@ -3,12 +3,13 @@
 ## Introduction
 
 In the past assignments we have trained how to:
-• Set up a MongoDB in a [ local ] Docker container
-• Configure a MongoDB driver to connect to the database instance
-• Prepare entities, repositories and queries as well as insert/update/delete operations
-• Provide a REST webservice with dependency injection
-• Create a simple client with which to consume the services and provide (basic) functionality
-for the user
+
+- Set up a MongoDB in a [ local ] Docker container
+- Configure a MongoDB driver to connect to the database instance
+- Prepare entities, repositories and queries as well as insert/update/delete operations
+- Provide a REST webservice with dependency injection
+- Create a simple client with which to consume the services and provide (basic) functionality for the user
+
 You will work in four groups. Each group will get *assigned a topic*. In this context you’ll create a small application which uses a MongoDB instance as data storage backend.
 You are allowed to use any platform/driver you like.
 
