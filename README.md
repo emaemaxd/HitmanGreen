@@ -18,17 +18,17 @@ While you are of course free to create a bigger project with more functionality 
 
 ### User Stories
 
-Implement at least three user stories
-• For example such user stories could be: browse products, shopping cart, order list, multiple users, live ticker, comments, picture upload,. . .
-• This depends highly on your topic, but think of it as ’one feature implemented from client through service till database’.
+    Implement at least three user stories
+    - For example such user stories could be: browse products, shopping cart, order list, multiple users, live ticker, comments, picture upload,. . .
+    - This depends highly on your topic, but think of it as ’one feature implemented from client through service till database’.
 
 ### Endpoints
 
 The endpoints (controllers) support the user stories
-• You’ll usually need at least one per distinct (collection) entity
-• Add methods as required
-• Do not use the repositories directly but utilize services!
-– At least one service method has to be non trivial (not just relaying to the reposi- tory)
+- You’ll usually need at least one per distinct (collection) entity
+- Add methods as required
+- Do not use the repositories directly but utilize services!
+    –- At least one service method has to be non trivial (not just relaying to the repository)
 
 ### Entities
 
