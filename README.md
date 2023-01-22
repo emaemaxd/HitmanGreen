@@ -1,5 +1,7 @@
 # Exercise MongoDB.09 – Microproject :smile:
 
+> Haslinger fragen: Gibt es vererbung in MongoDB bzw. kann man das ERD (Beziehung zw. Hitman-User) so lassen wie es is
+
 ## Introduction
 
 In the past assignments we have trained how to:
@@ -23,6 +25,13 @@ Implement at least *three* user stories
 
 - For example such user stories could be: browse products, shopping cart, order list, multiple users, live ticker, comments, picture upload, ...
 - This depends highly on your topic, but think of it as ’one feature implemented from client through service till database’.
+
+> 1. Als User möchte ich einen Kauf tätigen.
+> 2. Als User möchte ich einen Proof of Concept, dass mein Job erledigt wurde
+> 3. Als User möchte ich Hitman werden
+> 4. Als User möchte ich die Bewertungen von Hitmen sehen können
+> 5. Als User möchte ich die Hitmen filtern können
+> 6. Als Hitman möchte ich einen Kauf immer ablehnen können
 
 ### Endpoints
 
