@@ -1,6 +1,8 @@
 # Exercise MongoDB.09 – Microproject :smile:
 
-> Haslinger fragen: Gibt es vererbung in MongoDB bzw. kann man das ERD (Beziehung zw. Hitman-User) so lassen wie es is
+> Fragen: Gibt es vererbung in MongoDB -> nein gibt es nicht, aber man kann sie im Model abbilden, ist aber DB egal 
+
+> ERD kann man jetzt so lassen
 
 ## Introduction
 
@@ -55,7 +57,7 @@ Use at least five different entities
 All distinct collections have to have their own repository
 
 - Create at least one each of the following queries/operations in the project, those do *not* need to be all in one repository:
-  - Inser
+  - Insert
   - Update
   - Delete
   - Filtered Query
