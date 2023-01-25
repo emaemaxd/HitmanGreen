@@ -1,7 +1,6 @@
 # Exercise MongoDB.09 – Microproject :smile:
 
-> Fragen: Gibt es vererbung in MongoDB -> nein gibt es nicht, aber man kann sie im Model abbilden, ist aber DB egal 
-
+> Fragen: Gibt es vererbung in MongoDB -> nein gibt es nicht, aber man kann sie im Model abbilden, ist aber DB egal
 > ERD kann man jetzt so lassen
 
 ## Introduction
