@@ -1,0 +1,11 @@
+model\Hitman$TYPE_OF_EXECUTION.class
+model\Hitman$AREA_OF_OPERATION.class
+model\Opfer.class
+model\Auftrag.class
+model\Hitman.class
+repo\AuftragRepo.class
+repo\UserRepo.class
+META-INF\panache-archive.marker
+api\UserResource.class
+model\Rating.class
+model\User.class
