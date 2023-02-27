@@ -4,11 +4,13 @@ import io.quarkus.mongodb.panache.PanacheMongoEntity;
 import io.quarkus.mongodb.panache.common.MongoEntity;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.OneToMany;
 import java.util.List;
 
 @MongoEntity(collection = "Opfer")
-public class Opfer extends PanacheMongoEntity {
+@DiscriminatorValue("opfer")
+public class Opfer extends User {
 
     public String firstname;
     public String lastname;
@@ -24,5 +26,9 @@ public class Opfer extends PanacheMongoEntity {
 
     @OneToMany(mappedBy = "opfer")
     public List<Auftrag> auftraege;
+
+    public Opfer(String username, String password) {
+        super(username, password);
+    }
 
 }

@@ -166,6 +166,13 @@
     <orderEntry type="library" name="Maven: com.google.errorprone:error_prone_annotations:2.17.0" level="project" />
     <orderEntry type="library" name="Maven: io.quarkus:quarkus-hibernate-orm-panache-common:2.16.3.Final" level="project" />
     <orderEntry type="library" name="Maven: io.quarkus:quarkus-panache-hibernate-common:2.16.3.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.quarkus:quarkus-resteasy-reactive-jackson:2.16.3.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.quarkus:quarkus-resteasy-reactive-jackson-common:2.16.3.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.quarkus.resteasy.reactive:resteasy-reactive-jackson:2.16.3.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.quarkus:quarkus-jackson:2.16.3.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.2" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.14.2" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2" level="project" />
     <orderEntry type="library" name="Maven: io.quarkus:quarkus-smallrye-openapi:2.16.3.Final" level="project" />
     <orderEntry type="library" name="Maven: io.smallrye:smallrye-open-api-core:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.microprofile.openapi:microprofile-openapi-api:2.0.1" level="project" />

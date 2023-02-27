@@ -1,6 +1,7 @@
 D:\INSY\HitmanGreen\backend\src\main\java\api\UserResource.java
 D:\INSY\HitmanGreen\backend\src\main\java\model\Rating.java
 D:\INSY\HitmanGreen\backend\src\main\java\model\Auftrag.java
+D:\INSY\HitmanGreen\backend\src\main\java\service\UserService.java
 D:\INSY\HitmanGreen\backend\src\main\java\model\Hitman.java
 D:\INSY\HitmanGreen\backend\src\main\java\repo\AuftragRepo.java
 D:\INSY\HitmanGreen\backend\src\main\java\model\Opfer.java
