@@ -32,4 +32,44 @@ public class Hitman extends PanacheMongoEntity {
         GERMANY,
         ITALY
     }
+
+    public TYPE_OF_EXECUTION getType() {
+        return type;
+    }
+
+    public void setType(TYPE_OF_EXECUTION type) {
+        this.type = type;
+    }
+
+    public Boolean getTorture() {
+        return torture;
+    }
+
+    public void setTorture(Boolean torture) {
+        this.torture = torture;
+    }
+
+    public AREA_OF_OPERATION[] getArea() {
+        return area;
+    }
+
+    public void setArea(AREA_OF_OPERATION[] area) {
+        this.area = area;
+    }
+
+    public Auftrag getAuftrag() {
+        return auftrag;
+    }
+
+    public void setAuftrag(Auftrag auftrag) {
+        this.auftrag = auftrag;
+    }
+
+    public List<Rating> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(List<Rating> ratings) {
+        this.ratings = ratings;
+    }
 }
