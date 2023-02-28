@@ -6,9 +6,11 @@ import repo.HitmanRepo;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 
+@Path("/hitman")
 public class HitmanResource {
 
     @Inject
@@ -16,6 +18,7 @@ public class HitmanResource {
 
 
     @GET
+    @Path("/rating/{hitmanId}")
     public Response getHitmanRatings(@PathParam("hitmanId") String hitmanId) {
         try {
             ObjectId id = new ObjectId(hitmanId);

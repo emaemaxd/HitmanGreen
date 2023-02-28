@@ -1,1 +1,3 @@
 api\AuftragResource.class
+api\HitmanResource.class
+repo\HitmanRepo.class
