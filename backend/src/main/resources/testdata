@@ -1,0 +1,202 @@
+{
+  "username": "JohnDoe",
+  "password": "testpassword",
+  "auftrag": {
+    "successful": true,
+    "price": 1000,
+    "description": "Elimination of a target",
+    "deadline": "2022-03-10",
+    "proof": {
+      "type": "image",
+      "data": "https://example.com/proof/image.jpg"
+    },
+    "acceptedByHitman": true,
+    "proofAcceptedByUser": true,
+    "hitman": {
+      "type": "GUNS",
+      "torture": false,
+      "area": [
+        "USA",
+        "Canada"
+      ],
+      "auftrag": [
+        "string1",
+        "string2"
+      ],
+      "ratings": [
+        {
+          "date": "2022-03-10",
+          "stars": 5,
+          "description": "Excellent job!",
+          "auftrag": "string1",
+          "hitman": "JohnDoe"
+        }
+      ]
+    },
+    "opfer": {
+      "username": "JaneDoe",
+      "password": "testpassword",
+      "auftrag": "string1",
+      "firstname": "Jane",
+      "lastname": "Doe",
+      "address": "123 Main St",
+      "zip": 12345,
+      "city": "Anytown",
+      "country": "USA",
+      "age": 30,
+      "socialmedia": [
+        "https://facebook.com/janedoe",
+        "https://twitter.com/janedoe"
+      ],
+      "auftraege": [
+        "string1"
+      ]
+    },
+    "ratings": [
+      {
+        "date": "2022-03-10",
+        "stars": 4,
+        "description": "Good work overall",
+        "auftrag": "string1",
+        "hitman": "JohnDoe"
+      }
+    ],
+    "user": "JaneDoe"
+  }
+}
+
+{
+  "username": "Hacker1",
+  "password": "test123",
+  "auftrag": {
+    "successful": false,
+    "price": 500,
+    "description": "Hack a website",
+    "deadline": "2022-04-15",
+    "proof": {
+      "type": "text",
+      "data": "I couldn't complete the job."
+    },
+    "acceptedByHitman": false,
+    "proofAcceptedByUser": false,
+    "hitman": {
+      "type": "COMPUTERS",
+      "torture": false,
+      "area": [
+        "USA",
+        "UK",
+        "Canada"
+      ],
+      "auftrag": [
+        "string1",
+        "string3"
+      ],
+      "ratings": [
+        {
+          "date": "2022-04-15",
+          "stars": 2,
+          "description": "Couldn't complete the job on time.",
+          "auftrag": "string3",
+          "hitman": "Hacker1"
+        }
+      ]
+    },
+    "opfer": {
+      "username": "Target1",
+      "password": "target123",
+      "auftrag": "string1",
+      "firstname": "John",
+      "lastname": "Smith",
+      "address": "456 Main St",
+      "zip": 54321,
+      "city": "Anytown",
+      "country": "USA",
+      "age": 40,
+      "socialmedia": [
+        "https://facebook.com/johnsmith",
+        "https://twitter.com/johnsmith"
+      ],
+      "auftraege": [
+        "string1",
+        "string3"
+      ]
+    },
+    "ratings": [
+      {
+        "date": "2022-04-15",
+        "stars": 1,
+        "description": "Couldn't complete the job.",
+        "auftrag": "string3",
+        "hitman": "Hacker1"
+      }
+    ],
+    "user": "Target1"
+  }
+}
+
+{
+  "username": "Assassin1",
+  "password": "test456",
+  "auftrag": {
+    "successful": true,
+    "price": 2000,
+    "description": "Assassination of a politician",
+    "deadline": "2022-05-20",
+    "proof": {
+      "type": "image",
+      "data": "https://example.com/proof/image2.jpg"
+    },
+    "acceptedByHitman": true,
+    "proofAcceptedByUser": true,
+    "hitman": {
+      "type": "GUNS",
+      "torture": false,
+      "area": [
+        "France",
+        "Italy",
+        "Germany"
+      ],
+      "auftrag": [
+        "string2"
+      ],
+      "ratings": [
+        {
+          "date": "2022-05-20",
+          "stars": 5,
+          "description": "Excellent job!",
+          "auftrag": "string2",
+          "hitman": "Assassin1"
+        }
+      ]
+    },
+    "opfer": {
+      "username": "Politician1",
+      "password": "politics123",
+      "auftrag": "string2",
+      "firstname": "Angela",
+      "lastname": "Merkel",
+      "address": "789 Main St",
+      "zip": 98765,
+      "city": "Berlin",
+      "country": "Germany",
+      "age": 66,
+      "socialmedia": [
+        "https://twitter.com/angelamerkel",
+        "https://instagram.com/angelamerkel"
+      ],
+      "auftraege": [
+        "string2"
+      ]
+    },
+    "ratings": [
+      {
+        "date": "2022-05-20",
+        "stars": 5,
+        "description": "Excellent job!",
+        "auftrag": "string2",
+        "hitman": "Assassin1"
+      }
+    ],
+    "user": "Politician1"
+  }
+}
