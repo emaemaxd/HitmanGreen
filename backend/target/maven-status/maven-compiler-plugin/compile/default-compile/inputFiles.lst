@@ -7,6 +7,7 @@ D:\INSY\HitmanGreen\backend\src\main\java\repo\AuftragRepo.java
 D:\INSY\HitmanGreen\backend\src\main\java\model\Opfer.java
 D:\INSY\HitmanGreen\backend\src\main\java\repo\UserRepo.java
 D:\INSY\HitmanGreen\backend\src\main\java\api\UserResource.java
+D:\INSY\HitmanGreen\backend\src\main\java\dto\HitmanDTO.java
 D:\INSY\HitmanGreen\backend\src\main\java\api\AuftragResource.java
 D:\INSY\HitmanGreen\backend\src\main\java\repo\HitmanRepo.java
 D:\INSY\HitmanGreen\backend\src\main\java\dto\UserDTO.java

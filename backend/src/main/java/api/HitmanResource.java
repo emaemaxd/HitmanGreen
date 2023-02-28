@@ -1,5 +1,7 @@
 package api;
 
+import dto.HitmanDTO;
+import dto.UserDTO;
 import model.Hitman;
 import model.User;
 import org.bson.types.ObjectId;
@@ -27,11 +29,19 @@ public class HitmanResource {
     }
 
     @POST
-    public Response createHitman(Hitman hitman) {
+    public Response createHitman(HitmanDTO hitmanDTO) {
+        User user = new User();
+        user.setUsername(hitmanDTO.username);
+        user.setPassword(hitmanDTO.password);
+
+        Hitman hitman = new Hitman();
+        hitman.setAreaOfOperation(hitmanDTO.area);
+        hitman.setType(hitmanDTO.type);
+        hitman.setTorture(hitmanDTO.torture);
+        hitman.setUser(user);
         hitmanRepo.persist(hitman);
         return Response.status(Response.Status.CREATED).build();
     }
-
 
     @GET
     @Path("/rating/{hitmanId}")

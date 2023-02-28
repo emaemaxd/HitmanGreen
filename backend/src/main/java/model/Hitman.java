@@ -1,7 +1,9 @@
 package model;
 
+import dto.UserDTO;
 import io.quarkus.mongodb.panache.PanacheMongoEntity;
 import io.quarkus.mongodb.panache.common.MongoEntity;
+import org.jboss.logging.annotations.Field;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.OneToMany;
@@ -14,13 +16,27 @@ public class Hitman extends PanacheMongoEntity {
 
     public TYPE_OF_EXECUTION type;
     public Boolean torture;
-    public AREA_OF_OPERATION[] area;
+
+    public List<AREA_OF_OPERATION> areaOfOperation;
 
     @OneToOne
     public Auftrag auftrag;
 
     @OneToMany(mappedBy = "hitman")
     public List<Rating> ratings;
+
+    public Hitman() {
+    }
+
+    User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public enum TYPE_OF_EXECUTION {
         KNIVES,
@@ -31,6 +47,10 @@ public class Hitman extends PanacheMongoEntity {
         AUSTRIA,
         GERMANY,
         ITALY
+    }
+
+    public Hitman(String username, String password) {
+        super();
     }
 
     public TYPE_OF_EXECUTION getType() {
@@ -49,12 +69,12 @@ public class Hitman extends PanacheMongoEntity {
         this.torture = torture;
     }
 
-    public AREA_OF_OPERATION[] getArea() {
-        return area;
+    public List<AREA_OF_OPERATION> getAreaOfOperation() {
+        return areaOfOperation;
     }
 
-    public void setArea(AREA_OF_OPERATION[] area) {
-        this.area = area;
+    public void setAreaOfOperation(List<AREA_OF_OPERATION> areaOfOperation) {
+        this.areaOfOperation = areaOfOperation;
     }
 
     public Auftrag getAuftrag() {
