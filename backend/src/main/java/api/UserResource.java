@@ -1,6 +1,7 @@
 package api;
 
 
+import dto.UserDTO;
 import model.User;
 import org.bson.types.ObjectId;
 import repo.UserRepo;
@@ -21,13 +22,19 @@ public class UserResource {
     @Inject
     UserService userService;
 
+    @Inject
+    UserRepo userRepo;
+
     @GET
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
    @POST
-    public Response createUser(User user) {
+    public Response createUser(UserDTO userDTO) {
+        User user = new User();
+        user.setUsername(userDTO.username);
+        user.setPassword(userDTO.password);
         userService.createUser(user);
         return Response.status(Response.Status.CREATED).build();
     }
