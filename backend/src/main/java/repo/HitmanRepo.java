@@ -11,8 +11,7 @@ import javax.ws.rs.GET;
 public class HitmanRepo implements PanacheMongoRepository<Hitman> {
 
 
-
-
-
-
+    public Hitman findHitmanByName(String name) {
+        return find("username", name).firstResult();
+    }
 }

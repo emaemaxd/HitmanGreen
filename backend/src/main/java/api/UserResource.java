@@ -4,6 +4,7 @@ package api;
 import dto.UserDTO;
 import model.User;
 import org.bson.types.ObjectId;
+import repo.OpferRepo;
 import repo.UserRepo;
 import service.UserService;
 
@@ -24,6 +25,8 @@ public class UserResource {
 
     @Inject
     UserRepo userRepo;
+    @Inject
+    OpferRepo opferRepo;
 
     @GET
     public List<User> getAllUsers() {

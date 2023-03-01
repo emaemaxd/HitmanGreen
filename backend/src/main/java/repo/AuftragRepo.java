@@ -6,13 +6,10 @@ import model.Auftrag;
 import javax.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class AuftragRepo implements PanacheMongoRepository<AuftragRepo> {
+public class AuftragRepo implements PanacheMongoRepository<Auftrag> {
 
 
-    public AuftragRepo findById(int id){
-        return find("id", id).firstResult();
-    }
-    public AuftragRepo persist(Auftrag auftrag) {
-        return persist(auftrag);
+    public Auftrag findById(int id){
+        return find("order_id", id).firstResult();
     }
 }
