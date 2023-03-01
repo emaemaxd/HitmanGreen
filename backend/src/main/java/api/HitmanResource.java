@@ -2,6 +2,7 @@ package api;
 
 import dto.HitmanDTO;
 import dto.UserDTO;
+import model.Auftrag;
 import model.Hitman;
 import model.User;
 import org.bson.types.ObjectId;
@@ -22,6 +23,8 @@ public class HitmanResource {
 
     @Inject
     HitmanRepo hitmanRepo;
+    @Inject
+    UserRepo userRepo;
 
     @GET
     public List<Hitman> getAllHitman() {
@@ -57,4 +60,20 @@ public class HitmanResource {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
     }
+
+    @DELETE
+    @Path("remove/{id}")
+    public Response removeHitman(@PathParam("id") String name) {
+        if(hitmanRepo.findHitmanByName(name) == null || userRepo.findByUsername(name) == null) {
+            return Response.status(400).build();
+        }
+        User user = userRepo.findByUsername(name);
+        Hitman hitman = hitmanRepo.findHitmanByName(name);
+
+        // delete hitman and user
+        userRepo.delete(user);
+        hitmanRepo.delete(hitman);
+        return Response.ok(hitman).build();
+    }
+
 }
