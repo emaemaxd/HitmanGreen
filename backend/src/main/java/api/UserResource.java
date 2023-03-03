@@ -34,6 +34,12 @@ public class UserResource {
         return userService.getAllUsers();
     }
 
+    @GET
+    @Path("{name}")
+    public User findByUsername(@PathParam("name") String name) {
+        return userRepo.findByUsername(name);
+    }
+
    @POST
    @Path("create")
     public Response createUser(UserDTO userDTO) {
@@ -68,6 +74,4 @@ public class UserResource {
         userRepo.delete(user);
         return Response.ok(user).build();
     }
-
-
 }

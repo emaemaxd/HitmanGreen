@@ -41,7 +41,12 @@ public class HitmanResource {
         hitman.setAreaOfOperation(hitmanDTO.area);
         hitman.setType(hitmanDTO.type);
         hitman.setTorture(hitmanDTO.torture);
+
+        if(userRepo.findByUsername(hitmanDTO.username) == null) {
+            userRepo.persist(user);
+        }
         hitman.setUser(user);
+
         hitmanRepo.persist(hitman);
         return Response.status(Response.Status.CREATED).build();
     }
@@ -62,18 +67,18 @@ public class HitmanResource {
     }
 
     @DELETE
-    @Path("remove/{id}")
-    public Response removeHitman(@PathParam("id") String name) {
-        if(hitmanRepo.findHitmanByName(name) == null || userRepo.findByUsername(name) == null) {
+    @Path("remove/{name}")
+    public Response removeHitman(@PathParam("name") String name) {
+        if(userRepo.findByUsername(name) == null) {
             return Response.status(400).build();
         }
         User user = userRepo.findByUsername(name);
-        Hitman hitman = hitmanRepo.findHitmanByName(name);
+        Hitman hitman = (Hitman) hitmanRepo.find("user.username", name);
 
-        // delete hitman and user
-        userRepo.delete(user);
+        // delete both hitman and user when hitman is removed
         hitmanRepo.delete(hitman);
-        return Response.ok(hitman).build();
+        userRepo.delete(user);
+        return Response.ok(user).build();
     }
 
 }

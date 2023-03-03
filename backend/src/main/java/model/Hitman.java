@@ -1,10 +1,14 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import dto.UserDTO;
 import io.quarkus.mongodb.panache.PanacheMongoEntity;
 import io.quarkus.mongodb.panache.common.MongoEntity;
 import org.jboss.logging.annotations.Field;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -28,7 +32,8 @@ public class Hitman extends PanacheMongoEntity {
     public Hitman() {
     }
 
-    User user;
+    @OneToOne(mappedBy = "hitman", cascade = CascadeType.REMOVE)
+    public User user;
 
     public User getUser() {
         return user;

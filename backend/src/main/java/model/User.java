@@ -1,12 +1,12 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.quarkus.mongodb.panache.PanacheMongoEntity;
 import io.quarkus.mongodb.panache.common.MongoEntity;
 
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Inheritance;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @MongoEntity(collection = "users")
 @Inheritance
@@ -17,7 +17,11 @@ public class User extends PanacheMongoEntity {
 
     @OneToOne(mappedBy = "user")
     @Column(nullable = true)
-    private Auftrag auftrag;
+    public Hitman hitman;
+
+    @OneToOne(mappedBy = "user")
+    @Column(nullable = true)
+    public Auftrag auftrag;
 
     public User(){}
 
@@ -40,5 +44,21 @@ public class User extends PanacheMongoEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Hitman getHitman() {
+        return hitman;
+    }
+
+    public void setHitman(Hitman hitman) {
+        this.hitman = hitman;
+    }
+
+    public Auftrag getAuftrag() {
+        return auftrag;
+    }
+
+    public void setAuftrag(Auftrag auftrag) {
+        this.auftrag = auftrag;
     }
 }
