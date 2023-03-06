@@ -1,12 +1,15 @@
 package api;
 
 import dto.HitmanDTO;
+import dto.RatingDTO;
 import dto.UserDTO;
 import model.Auftrag;
 import model.Hitman;
+import model.Rating;
 import model.User;
 import org.bson.types.ObjectId;
 import repo.HitmanRepo;
+import repo.RatingRepo;
 import repo.UserRepo;
 import service.UserService;
 
@@ -14,6 +17,7 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.List;
 
 @Path("/hitman")
@@ -25,6 +29,8 @@ public class HitmanResource {
     HitmanRepo hitmanRepo;
     @Inject
     UserRepo userRepo;
+    @Inject
+    RatingRepo ratingRepo;
 
     @GET
     public List<Hitman> getAllHitman() {
@@ -51,6 +57,25 @@ public class HitmanResource {
         return Response.status(Response.Status.CREATED).build();
     }
 
+    @POST
+    @Path("addRating")
+    public Response hitmanAddRating(RatingDTO rating) {
+        Rating hitmanRating = new Rating();
+       hitmanRating.setDescription(rating.description);
+       hitmanRating.setDate(rating.date);
+       hitmanRating.setStars(rating.stars);
+        Hitman hitman = hitmanRepo.findHitmanByName(rating.hitmanName);
+        if (hitman == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+
+        hitman.addRating(hitmanRating);
+        ratingRepo.persist(hitmanRating);
+        hitmanRepo.update(hitman);
+
+        return Response.status(Response.Status.CREATED).build();
+    }
+
     @GET
     @Path("/rating/{hitmanId}")
     public Response getHitmanRatings(@PathParam("hitmanId") String hitmanId) {
@@ -73,7 +98,7 @@ public class HitmanResource {
             return Response.status(400).build();
         }
         User user = userRepo.findByUsername(name);
-        Hitman hitman = (Hitman) hitmanRepo.find("user.username", name);
+        Hitman hitman = hitmanRepo.findHitmanByName(name);
 
         // delete both hitman and user when hitman is removed
         hitmanRepo.delete(hitman);

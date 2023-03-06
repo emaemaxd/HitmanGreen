@@ -12,6 +12,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import java.util.ArrayList;
 import java.util.List;
 
 @MongoEntity(collection = "Hitman")
@@ -96,5 +97,16 @@ public class Hitman extends PanacheMongoEntity {
 
     public void setRatings(List<Rating> ratings) {
         this.ratings = ratings;
+    }
+
+    public void addRating(Rating rating) {
+        List<Rating> ratings = this.getRatings();
+        if (ratings == null) {
+            ratings = new ArrayList<>();
+            this.setRatings(ratings); // set the new ratings list on the hitman object
+        }
+
+        ratings.add(rating);
+        rating.setHitman(this); // set the hitman on the rating object
     }
 }
