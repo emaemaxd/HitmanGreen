@@ -27,8 +27,8 @@ public class Hitman extends PanacheMongoEntity {
     @OneToOne
     public Auftrag auftrag;
 
-    @OneToMany(mappedBy = "hitman")
-    public List<Rating> ratings;
+    @OneToMany(mappedBy = "hitman", cascade = CascadeType.ALL, orphanRemoval = true)
+    public List<Rating> ratings = new ArrayList<>();
 
     public Hitman() {
     }
@@ -100,13 +100,13 @@ public class Hitman extends PanacheMongoEntity {
     }
 
     public void addRating(Rating rating) {
-        List<Rating> ratings = this.getRatings();
-        if (ratings == null) {
-            ratings = new ArrayList<>();
-            this.setRatings(ratings); // set the new ratings list on the hitman object
-        }
-
         ratings.add(rating);
-        rating.setHitman(this); // set the hitman on the rating object
+        //rating.setHitman(this); circular reference error???
     }
+
+    public void removeRating(Rating rating) {
+        ratings.remove(rating);
+        rating.setHitman(null);
+    }
+
 }

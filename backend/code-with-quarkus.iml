@@ -266,5 +266,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: io.rest-assured:rest-assured-common:4.5.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: io.rest-assured:xml-path:4.5.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.commons:commons-lang3:3.12.0" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.json.bind:jakarta.json.bind-api:1.0.2" level="project" />
   </component>
 </module>

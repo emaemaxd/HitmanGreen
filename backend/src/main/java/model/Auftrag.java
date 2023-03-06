@@ -9,6 +9,7 @@ import org.bson.types.ObjectId;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -134,11 +135,21 @@ public class Auftrag extends PanacheMongoEntity {
         public Opfer opfer;
 
         @OneToMany(mappedBy = "auftrag")
-        public List<Rating> ratings;
+        public List<Rating> ratings = new ArrayList<>();
 
         @OneToOne(cascade = CascadeType.ALL)
         @JoinColumn(name = "user_id", referencedColumnName = "id")
         private User user;
+
+        public void addRating(Rating rating) {
+                ratings.add(rating);
+                //rating.setAuftrag(this); circular reference error???
+        }
+
+        public void removeRating(Rating rating) {
+                ratings.remove(rating);
+                rating.setHitman(null);
+        }
     }
 
 

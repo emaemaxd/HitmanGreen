@@ -2,15 +2,10 @@ package api;
 
 import dto.AuftragDTO;
 import dto.HitmanDTO;
-import model.Auftrag;
-import model.Hitman;
-import model.Opfer;
-import model.User;
+import dto.RatingAuftragDTO;
+import model.*;
 import org.bson.types.ObjectId;
-import repo.AuftragRepo;
-import repo.HitmanRepo;
-import repo.OpferRepo;
-import repo.UserRepo;
+import repo.*;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -31,6 +26,8 @@ public class AuftragResource {
     UserRepo ur;
     @Inject
     OpferRepo or;
+    @Inject
+    RatingRepo rr;
 
     @GET
     public List<Auftrag> getAllAuftraege() {
@@ -75,6 +72,24 @@ public class AuftragResource {
         auftrag.setOpfer(opfer);
         ar.persist(auftrag);
     return Response.ok(auftrag).build();
+    }
+
+    @POST
+    @Path("addRating")
+    public Response orderAddRating(RatingAuftragDTO rating) {
+        Rating orderRating = new Rating();
+        orderRating.setDescription(rating.description);
+        orderRating.setDate(rating.date);
+        orderRating.setStars(rating.stars);
+        Auftrag order = ar.findById(rating.order_id);
+        if (order == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        order.addRating(orderRating);
+        rr.persist(orderRating);
+        ar.update(order);
+
+        return Response.status(Response.Status.CREATED).build();
     }
 
     @PUT

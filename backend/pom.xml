@@ -70,6 +70,11 @@
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
     </dependency>
+      <dependency>
+          <groupId>jakarta.json.bind</groupId>
+          <artifactId>jakarta.json.bind-api</artifactId>
+          <version>1.0.2</version>
+      </dependency>
   </dependencies>
   <build>
     <plugins>

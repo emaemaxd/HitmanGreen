@@ -1,9 +1,13 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.quarkus.mongodb.panache.PanacheMongoEntity;
 import io.quarkus.mongodb.panache.common.MongoEntity;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 import java.util.List;
@@ -20,7 +24,8 @@ public class Rating extends PanacheMongoEntity {
     @ManyToOne
     public Auftrag auftrag;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn
     public Hitman hitman;
 
     public Rating() {}
@@ -63,7 +68,6 @@ public class Rating extends PanacheMongoEntity {
 
     public void setHitman(Hitman hitman) {
         this.hitman = hitman;
-        hitman.addRating(this);
     }
 
 }
