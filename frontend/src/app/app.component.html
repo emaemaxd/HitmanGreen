@@ -1,0 +1,69 @@
+  <!-- Hero -->
+  <section class="et-hero-tabs">
+    <h1>Green-Hitman</h1>
+    <h3>Buy your Hitman, with Green-Hitman!</h3>
+
+    <a href=""><img src="https://www.animatedimages.org/data/media/697/animated-vampire-image-0001.gif" border="0" alt="animated-vampire-image-0001" /></a>
+
+    <div class="et-hero-tabs-container">
+      <a class="et-hero-tab" href="#tab-es6">Login/Register</a>
+      <a class="et-hero-tab" href="#tab-flexbox">Order Hitman</a>
+      <a class="et-hero-tab" href="#tab-react">React</a>
+      <a class="et-hero-tab" href="#tab-angular">Write Rating</a>
+      <a class="et-hero-tab" href="#tab-other">Ratings</a>
+      <span class="et-hero-tab-slider"></span>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main class="et-main">
+
+    <section class="et-slide" id="tab-es6">
+      <a href="">
+        <h1>Login/Register</h1>
+      </a>
+      <h3>something about Login</h3>
+
+      <br>
+      <div class="example-container">
+        <form [formGroup]="form" (ngSubmit)="createUser()">
+          <mat-form-field>
+            <input matInput placeholder="Username" formControlName="username">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Password" formControlName="password">
+          </mat-form-field>
+            <button mat-button color="primary" ng>Primary</button>
+          <!-- other form elements -->
+        </form>
+      </div>
+    </section>
+
+    <section class="et-slide" id="tab-flexbox">
+      <a href="">
+        <h1>Order Hitman</h1>
+      </a>
+      <h3>something about Buy Hitman</h3>
+    </section>
+
+    <section class="et-slide" id="tab-react">
+      <a href="">
+      <h1>React</h1>
+      </a>
+      <h3>something about react</h3>
+    </section>
+
+    <section class="et-slide" id="tab-angular">
+      <a href="">
+      <h1>Write Rating</h1>
+      </a>
+      <h3>something about Write Review</h3>
+    </section>
+
+    <section class="et-slide" id="tab-other">
+      <a href="">
+      <h1>Ratings</h1>
+      </a>
+      <h3>something about Ratings</h3>
+    </section>
+  </main>
