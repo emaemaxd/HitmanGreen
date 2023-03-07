@@ -15,6 +15,10 @@ public class UserRepo implements PanacheMongoRepository<User> {
         return find("username", username).firstResult();
     }
 
+    public User findByPassword(String password){
+        return find("password", password).firstResult();
+    }
+
     public User findById(long id){
         return find("id", id).firstResult();
     }

@@ -9,6 +9,7 @@ repo\AuftragRepo.class
 dto\HitmanDTO$TYPE_OF_EXECUTION.class
 META-INF\panache-archive.marker
 api\UserResource.class
+dto\RatingAuftragDTO.class
 model\User.class
 model\Hitman$TYPE_OF_EXECUTION.class
 dto\AuftragDTO.class

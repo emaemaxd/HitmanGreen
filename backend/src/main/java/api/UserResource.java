@@ -50,6 +50,15 @@ public class UserResource {
         return Response.status(Response.Status.CREATED).build();
     }
 
+    @POST
+    @Path("login/{username}/{password}")
+    public Response login(@PathParam("username") String username, @PathParam("password") String password) {
+        if(userRepo.findByUsername(username) == null || userRepo.findByPassword(password) == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        return Response.status(Response.Status.CREATED).build();
+    }
+
     /*@PUT
     @Path("/{id}")
     public Response updateUser(@PathParam("id") ObjectId id, User user) {
