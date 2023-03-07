@@ -11,7 +11,10 @@ import {MatInputModule} from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import { FormsModule } from '@angular/forms';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -27,7 +30,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule // add this line
+    FormsModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    // add this line
   ],
   providers: [],
   bootstrap: [AppComponent]

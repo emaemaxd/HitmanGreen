@@ -8,7 +8,7 @@
     <div class="et-hero-tabs-container">
       <a class="et-hero-tab" href="#tab-es6">Login/Register</a>
       <a class="et-hero-tab" href="#tab-flexbox">Order Hitman</a>
-      <a class="et-hero-tab" href="#tab-react">React</a>
+      <a class="et-hero-tab" href="#tab-react">Hitman list</a>
       <a class="et-hero-tab" href="#tab-angular">Write Rating</a>
       <a class="et-hero-tab" href="#tab-other">Ratings</a>
       <span class="et-hero-tab-slider"></span>
@@ -22,18 +22,37 @@
       <a href="">
         <h1>Login/Register</h1>
       </a>
-      <h3>something about Login</h3>
 
       <br>
       <div class="example-container">
+        <br>
+        <h3>Register</h3>
         <form [formGroup]="form" (ngSubmit)="createUser()">
           <mat-form-field>
             <input matInput placeholder="Username" formControlName="username">
           </mat-form-field>
+          <br>
           <mat-form-field>
             <input matInput placeholder="Password" formControlName="password">
           </mat-form-field>
-            <button mat-button color="primary" ng>Primary</button>
+          <br>
+            <button mat-button color="primary" ng>Register</button>
+          <!-- other form elements -->
+        </form>
+
+        <br>
+        <br>
+        <h3>Login</h3>
+        <form [formGroup]="form" (ngSubmit)="login(username,password)">
+          <mat-form-field>
+            <input matInput #username placeholder="Username" formControlName="username">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput #password placeholder="Password" formControlName="password">
+          </mat-form-field>
+          <br>
+          <button mat-button color="primary" ng>Login</button>
           <!-- other form elements -->
         </form>
       </div>
@@ -43,14 +62,103 @@
       <a href="">
         <h1>Order Hitman</h1>
       </a>
-      <h3>something about Buy Hitman</h3>
+
+
+      <h3>Kill your Neighbour</h3>
+      <form [formGroup]="form" (ngSubmit)="addAuftrag()">
+
+        <br>
+
+
+
+
+
+
+        <mat-form-field>
+          <input matInput #firstname placeholder="firstname" formControlName="firstname">
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field>
+          <input matInput #lastname placeholder="lastname" formControlName="lastname">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          <input matInput #address placeholder="address" formControlName="address">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          <input matInput #zip placeholder="zip" formControlName="zip">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          <input matInput #city placeholder="city" formControlName="city">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          <mat-label  formControlName="country">country</mat-label>
+          <mat-select [(ngModel)]="selectedOption">
+            <mat-option value="AUSTRIA">AUSTRIA</mat-option>
+            <mat-option value="GERMANY">GERMANY</mat-option>
+            <mat-option value="ITALY">ITALY</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field>
+          <input matInput #age placeholder="age" formControlName="age">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          <input matInput #socialMedia placeholder="socialMedia" formControlName="socialMedia">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          <mat-label  formControlName="deadline">price</mat-label>
+          <mat-select [(ngModel)]="selectedOption">
+            <mat-option value="price1">10.000 € Bronze 65%KC</mat-option>
+            <mat-option value="price2">20.000 € Gold 80%KC</mat-option>
+            <mat-option value="price3">30.000 € Diamant 95%KC</mat-option>
+            <mat-option value="price3">35.000 € Execute 99%KC</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <br>
+        <mat-form-field>
+          <input matInput #description placeholder="description" formControlName="description">
+        </mat-form-field>
+
+        <br>
+
+        <button mat-button color="primary" ng>Order</button>
+        <!-- other form elements -->
+      </form>
+
     </section>
 
     <section class="et-slide" id="tab-react">
       <a href="">
-      <h1>React</h1>
+      <h1>Hitman list</h1>
       </a>
       <h3>something about react</h3>
+      <ul>
+        <li *ngFor="let hitman of hitmen">
+          <h2>Type of Execution: {{ hitman.TYPE_OF_EXECUTION }}</h2>
+          <p>Torture: {{ hitman.torture }}</p>
+          <p>Area of Operation: {{ hitman.areaOfOperation }}</p>
+          <p>Auftrag: {{ hitman.auftrag }}</p>
+          <p>Ratings: {{ hitman.ratings }}</p>
+          <p>User: {{ hitman.user }}</p>
+        </li>
+      </ul>
     </section>
 
     <section class="et-slide" id="tab-angular">

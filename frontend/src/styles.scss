@@ -40,18 +40,23 @@ a {
 
     .inactiveLink{
         pointer-events: none;
-        cursor: default;      
+        cursor: default;
     }
     img{
         border-style: solid;
         border-color:rgb(255, 0, 0);
         width:5vw;
-        height:5vw;  
-        
-        } 
+        height:5vw;
+
+        }
     }
 }
 
+ul{
+
+  background-color: aliceblue;
+  color: black;
+}
 
 
 .et-hero-tabs-container {

@@ -7,7 +7,6 @@ export interface Opfer {
   zip: number;
   city: string;
   country: string;
-  age: number;
-  socialMedia: string[];
-  auftraege: Auftrag[];
+  age: number; // new property
+  socialMedia: string; // new property
 }

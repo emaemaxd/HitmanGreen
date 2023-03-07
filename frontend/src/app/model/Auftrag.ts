@@ -1,10 +1,12 @@
+import {Opfer} from "./Opfer";
+
 export interface Auftrag {
-  order_id: number;
   successful: boolean;
   price: number;
   description: string;
   deadline: Date;
-  proof: Blob[];
+  proof: any;
   acceptedByHitman: boolean;
   proofAcceptedByUser: boolean;
+  opfer: Opfer;
 }

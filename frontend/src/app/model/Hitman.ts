@@ -13,7 +13,7 @@ areaOfOperation: AreaOfOp;
 
 auftrag: Auftrag;
 
-ratings: Rating[];
+ratings: Rating;
 user: User;
 
 
