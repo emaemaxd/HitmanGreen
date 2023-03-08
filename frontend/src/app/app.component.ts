@@ -5,6 +5,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Auftrag} from "./model/Auftrag";
 import {Opfer} from "./model/Opfer";
 import {Hitman} from "./model/Hitman";
+import {Rating} from "./model/Rating";
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 
@@ -19,6 +21,7 @@ export class AppComponent {
   selectedOption: string = "true";
 
   hitmen: Hitman[];
+  users: User[];
 
   constructor(private api: ApiService, private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -26,6 +29,7 @@ export class AppComponent {
       password: ['',Validators.required],
     });
     this.hitmen = [];
+    this.users = [];
   }
 
 
@@ -119,6 +123,7 @@ export class AppComponent {
   ngOnInit() {
     this.api.getHitmen()
       .subscribe(hitmen => this.hitmen = hitmen);
+    this.getAllUsers();
   }
 
   getHitmen(): void {
@@ -126,6 +131,34 @@ export class AppComponent {
       .subscribe(hitmen => this.hitmen = hitmen);
   }
 
+  getAllUsers() {
+    this.api.getUsers().subscribe(
+      (users) => {
+        this.users = users;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
 
+
+  addRating(): void {
+    if (this.form.invalid) {
+      return;
+    }
+
+    const rating: Rating = {
+      date: new Date(),
+      stars: this.form.controls["stars"].value,
+      description: this.form.controls["description"].value,
+      auftrag: this.form.controls["auftrag"].value,
+      hitman: this.form.controls["hitman"].value,
+    };
+
+    this.api.addRating(rating).subscribe(r => {
+      console.log(r);
+    });
+  }
 
 }

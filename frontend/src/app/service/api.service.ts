@@ -7,6 +7,7 @@ import {Auftrag} from "../model/Auftrag";
 import { MatCheckbox } from '@angular/material/checkbox';
 import {Opfer} from "../model/Opfer";
 import {Hitman} from "../model/Hitman";
+import {Rating} from "../model/Rating";
 
 
 @Injectable({
@@ -33,6 +34,15 @@ export class ApiService {
 
   getHitmen(): Observable<Hitman[]> {
     return this.http.get<Hitman[]>(this.apiUrl+`/hitman`);
+  }
+
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.apiUrl}/users`);
+  }
+
+  addRating(rating: Rating): Observable<any> {
+    return this.http.post<any>(
+      `${this.apiUrl}/rating/create`, rating);
   }
 
 }

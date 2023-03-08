@@ -9,7 +9,7 @@
       <a class="et-hero-tab" href="#tab-es6">Login/Register</a>
       <a class="et-hero-tab" href="#tab-flexbox">Order Hitman</a>
       <a class="et-hero-tab" href="#tab-react">Hitman list</a>
-      <a class="et-hero-tab" href="#tab-angular">Write Rating</a>
+      <a class="et-hero-tab" href="#tab-angular">User list</a>
       <a class="et-hero-tab" href="#tab-other">Ratings</a>
       <span class="et-hero-tab-slider"></span>
     </div>
@@ -19,6 +19,11 @@
   <main class="et-main">
 
     <section class="et-slide" id="tab-es6">
+
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
       <a href="">
         <h1>Login/Register</h1>
       </a>
@@ -53,26 +58,32 @@
           </mat-form-field>
           <br>
           <button mat-button color="primary" ng>Login</button>
+          <br>
+          <br>
+          <br>
+          <br>
           <!-- other form elements -->
         </form>
       </div>
+
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
     </section>
 
     <section class="et-slide" id="tab-flexbox">
+
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
       <a href="">
         <h1>Order Hitman</h1>
       </a>
 
 
-      <h3>Kill your Neighbour</h3>
+      <h3>Kill your plant-hater</h3>
       <form [formGroup]="form" (ngSubmit)="addAuftrag()">
 
         <br>
-
-
-
-
-
+        <br>
 
         <mat-form-field>
           <input matInput #firstname placeholder="firstname" formControlName="firstname">
@@ -142,13 +153,20 @@
         <!-- other form elements -->
       </form>
 
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+
+
     </section>
 
     <section class="et-slide" id="tab-react">
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+
       <a href="">
       <h1>Hitman list</h1>
       </a>
-      <h3>something about react</h3>
+      <h3>Our Hitman</h3>
       <ul>
         <li *ngFor="let hitman of hitmen">
           <h2>Type of Execution: {{ hitman.TYPE_OF_EXECUTION }}</h2>
@@ -163,15 +181,64 @@
 
     <section class="et-slide" id="tab-angular">
       <a href="">
-      <h1>Write Rating</h1>
+      <h1>User list</h1>
       </a>
-      <h3>something about Write Review</h3>
+      <h3>Our Users</h3>
+      <ul>
+        <li *ngFor="let user of users">
+          <span>{{ user.username }}</span>
+          <span>{{ user.password }}</span>
+        </li>
+      </ul>
     </section>
 
     <section class="et-slide" id="tab-other">
+
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+
       <a href="">
       <h1>Ratings</h1>
       </a>
-      <h3>something about Ratings</h3>
+      <h3>Hitman Ratings</h3>
+      <br>
+
+      <form [formGroup]="form" (ngSubmit)="addRating()">
+
+        <mat-form-field>
+          <input matInput #date placeholder="date" formControlName="date">
+        </mat-form-field>
+
+        <br>
+
+          <mat-form-field>
+            <mat-label  formControlName="stars">stars</mat-label>
+            <mat-select [(ngModel)]="selectedOption">
+              <mat-option value="star1">1 Star</mat-option>
+              <mat-option value="star2">2 Stars</mat-option>
+              <mat-option value="star3">3 Stars</mat-option>
+              <mat-option value="star4">4 Stars</mat-option>
+              <mat-option value="star5">5 Stars</mat-option>
+            </mat-select>
+          </mat-form-field>
+        <br>
+
+
+        <mat-form-field>
+          <input matInput #auftrag placeholder="auftrag" formControlName="auftrag">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          <input matInput #hitman placeholder="hitman" formControlName="hitman">
+        </mat-form-field>
+        <br>
+
+        <button mat-button color="primary" ng>Rate</button>
+
+      </form>
+
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
     </section>
   </main>

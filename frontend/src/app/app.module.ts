@@ -15,6 +15,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import { FormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatSlideToggleModule,
     ReactiveFormsModule,
     MatCheckboxModule,
+    MatDatepickerModule
     // add this line
   ],
   providers: [],
